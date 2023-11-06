@@ -92,9 +92,9 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    /*auto end = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-    cout << "Time: " << duration << " s" << endl;*/
+    // auto end = std::chrono::high_resolution_clock::now();
+    // auto duration = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+    // cout << "Time: " << duration << " s" << endl;
     return 0;
 }
 
@@ -117,9 +117,8 @@ bitset<4> hex_char_to_bin(char c)
     case 'C': return bitset<4>("1100");
     case 'D': return bitset<4>("1101");
     case 'E': return bitset<4>("1110");
-    case 'F': return bitset<4>("1111");
     }
-    return NULL; // Default case
+    return bitset<4>("1111");
 }
 
 bitset<MAX_SIZE> hex_str_to_bin(const string& hex) 
@@ -290,7 +289,7 @@ bool check_prime_by_Miller_Rabin(const bitset<MAX_SIZE>& n)
    
     auto start = std::chrono::high_resolution_clock::now();
 
-    for (int j = 0; j < 4; ++j) 
+    for (int j = 0; j < 10; ++j) 
     {
         int a_int = rand() % 100; 
         bitset<MAX_SIZE> a(Primes[a_int]);

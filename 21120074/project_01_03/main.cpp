@@ -3,6 +3,7 @@
 #include<fstream>
 #include<string>
 #include<chrono>
+#include<algorithm>
 
 #define MAX_SIZE 1025
 
@@ -93,9 +94,8 @@ bitset<4> hex_char_to_bin(char c)
     case 'C': return bitset<4>("1100");
     case 'D': return bitset<4>("1101");
     case 'E': return bitset<4>("1110");
-    case 'F': return bitset<4>("1111");
     }
-    return NULL; // Default case
+    return bitset<4>("1111");
 }
 
 bitset<MAX_SIZE> hex_str_to_bin(const string& hex)
